@@ -101,14 +101,15 @@ au! BufWritePost $MYVIMRC source %      " auto source when writing to init.vm al
 " You can't stop me
 cmap w!! w !sudo tee %
 
-" colorscheme fairyfloss
+colorscheme fairyfloss
+hi Normal guifg=#f8f8f0 guibg=NONE gui=NONE
 " colorscheme pop-punk
 " colorscheme defau
 " gruvbox
-let g:gruvbox_italic=1
-let g:gruvbox_transparent=1
-let g:gruvbox_invert_selection='0'
-colorscheme gruvbox
+" let g:gruvbox_italic=1
+" let g:gruvbox_transparent=1
+" let g:gruvbox_invert_selection='0'
+" colorscheme gruvbox
 
 " edit & source vim config files
 nmap <leader><leader>e :edit ~/.config/nvim/init.vim<cr>
@@ -184,8 +185,8 @@ let g:indent_guides_auto_colors = 0
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_guide_size = 1
 let g:indent_guides_exclude_filetypes = ['help', 'netrw', 'neoterm', 'fugitive', 'git']
-hi IndentGuidesOdd  guibg='transparent' guifg='#458588'
-hi IndentGuidesEven guibg='transparent' guifg='#B16286'
+hi IndentGuidesOdd  guibg=NONE guifg=#458588
+hi IndentGuidesEven guibg=NONE guifg=#B16286
 
 " glsl file association
 autocmd! BufNewFile,BufRead *.vs,*.fs set ft=glsl
@@ -205,18 +206,20 @@ au TermOpen * tnoremap <buffer> <C-k> <C-\><C-n><C-w>k
 au TermOpen * tnoremap <buffer> <M-l> <C-\><C-n><C-w>l
 
 " share clipboard with windows
-let g:clipboard = {
-  \   'name': 'win32yank-wsl',
-  \   'copy': {
-  \      '+': 'win32yank -i --crlf',
-  \      '*': 'win32yank -i --crlf',
-  \    },
-  \   'paste': {
-  \      '+': 'win32yank -o --lf',
-  \      '*': 'win32yank -o --lf',
-  \   },
-  \   'cache_enabled': 0,
-  \ }
+if (executable("win32yank") && !has("win32"))
+  let g:clipboard = {
+    \   'name': 'win32yank-wsl',
+    \   'copy': {
+    \      '+': 'win32yank -i --crlf',
+    \      '*': 'win32yank -i --crlf',
+    \    },
+    \   'paste': {
+    \      '+': 'win32yank -o --lf',
+    \      '*': 'win32yank -o --lf',
+    \   },
+    \   'cache_enabled': 0,
+    \ }
+endif
 
 " vim-test
 let test#strategy = "neoterm"
