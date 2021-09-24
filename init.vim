@@ -40,7 +40,7 @@ set inccommand=split                    " Incremental command (live regex)
 set pumblend=15                         " Transparency for popups
 set signcolumn=number                   " merge signcolumn and number column into one
 set list                                " Show hidden characters (like space, etc.)
-set listchars=tab:←–→,trail:∙,lead:▍,nbsp:␣,extends:»,precedes:«,conceal:⁝
+set listchars=tab:←–→,trail:•,lead:∙,nbsp:␣,extends:»,precedes:«,conceal:⁝
 
 call plug#begin(stdpath('data') . '/plugged')
 
@@ -185,8 +185,8 @@ let g:indent_guides_auto_colors = 0
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_guide_size = 1
 let g:indent_guides_exclude_filetypes = ['help', 'netrw', 'neoterm', 'fugitive', 'git']
-hi IndentGuidesOdd  guibg=NONE guifg=#458588
-hi IndentGuidesEven guibg=NONE guifg=#B16286
+hi IndentGuidesEven  guibg=#8077A8 guifg=#C2FFDF
+hi IndentGuidesOdd   guibg=#464258 guifg=#C19FD8
 
 " glsl file association
 autocmd! BufNewFile,BufRead *.vs,*.fs set ft=glsl
