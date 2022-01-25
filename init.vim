@@ -58,7 +58,7 @@ Plug 'airblade/vim-gitgutter'
 " colorschemes
 Plug 'tssm/fairyfloss.vim'
 Plug 'bignimbus/pop-punk.vim'
-Plug 'epmor/hotline-vim'
+Plug 'ronwoch/hotline-vim'
 Plug 'victorze/foo'
 Plug 'thedenisnikulin/vim-cyberpunk'
 Plug 'wadackel/vim-dogrun'
@@ -70,7 +70,7 @@ Plug 'danini-the-panini/gruvbox'
 Plug 'tikhomirov/vim-glsl'
 
 " styling
-Plug 'shadmansaleh/lualine.nvim'
+Plug 'nvim-lualine/lualine.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'ryanoasis/vim-devicons'
 Plug 'nathanaelkane/vim-indent-guides'
